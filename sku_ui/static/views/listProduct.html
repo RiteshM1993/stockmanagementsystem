@@ -1,0 +1,29 @@
+<div class="container-fluid" ng-app="productCtrl" ng-init="getallproduct()">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="Well">
+                <button type="" ui-sref="addproducts"class="btn btn-success">Add product</button>
+            </div>
+            <div>
+                <table st-table="datacollection" st-safe-src="productData" class="table table-striped table-responsive">
+                    <thead>
+                    <tr>
+                        <th>S.no</th>
+                        <th st-sort="name">Product Name</th>
+                        <th st-sort="category">Subcategory</th>
+                        <th st-sort="sub_category">Catagory</th>
+
+                    </tr>
+                    </thead>
+
+                <tr ng-repeat="d in datacollection">
+                    <td ng-bind="$index+1"></td>
+                    <td ng-bind="d.name"></td>
+                    <td ng-bind="d.category"></td>
+                    <td ng-bind="d.sub_category"></td>
+                </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
